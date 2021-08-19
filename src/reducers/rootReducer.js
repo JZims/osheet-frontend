@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import altReducer from './altReducer.js'
+import userReducer from './userReducer.js'
 
 let initialState = {
     count: 0
@@ -23,6 +23,6 @@ let countReducer = (state = initialState, action) => {
 
 }
 
-const rootReducer = combineReducers({countReducer, altReducer})
+const rootReducer = combineReducers({countReducer, userReducer})
 
 export default rootReducer
