@@ -16,9 +16,6 @@ let userReducer = (state = initialUser, action) => {
         default:
             return state
     }
-
-
-    return state
 }
 
 export default userReducer

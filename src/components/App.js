@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {Switch, Route, Link } from "react-router-dom";
 import '../styles/main.css'
 import Login from './Login'
@@ -12,11 +12,11 @@ function App() {
 const loggedIn = useSelector((state) => state.userReducer)
 
  // dispatch action to store to change value of state
- const dispatch = useDispatch()
+//  const dispatch = useDispatch()
 
 if (loggedIn.userName.length > 1){
   return (
-     <div className="App">
+     <div class="h-64">
        <nav>
          <ul>
            <li>
