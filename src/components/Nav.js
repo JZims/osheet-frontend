@@ -5,32 +5,46 @@ import LoginButton from './login-button'
 import LogoutButton from './logout-button'
 
 
-function Nav() {
-
-
-
-
+function MainNav() {
     return (
-        <nav class="bg-white shadow-lg">
-		    <div class="max-w-6xl mx-auto px-4">
-			    <div class="flex justify-between">
-				    <div class="flex space-x-7">
-                        <div>
-                            <RouterNavLink class="flex items-center py-4 px-2" to="/new">
-                                <span class="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
-                            </RouterNavLink>
-                            <RouterNavLink class="flex items-center py-4 px-2" to="/sheets">
-                                <span class="font-semibold text-gray-500 text-lg">View Your Sheets</span>
-                            </RouterNavLink>
-                        </div>
-					
-					</div>
-				</div>
-			</div>
-        </nav>
+	 <div class="flex justify-between">
+		 <div class="flex space-x-7">
+             <div>
+                    <RouterNavLink class="flex items-center py-4 px-2" to="/new">
+                        <span class="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
+                    </RouterNavLink>
+                    <RouterNavLink class="flex items-center py-4 px-2" to="/sheets">
+                        <span class="font-semibold text-gray-500 text-lg">View Your Sheets</span>
+                    </RouterNavLink>
+            </div>		
+		</div>
+	</div>
+		
     )
 }
-export default Nav
+
+function AuthNav() {
+    const { isAuthenticated } = useAuth0()
+
+    return(
+        <div class="bg-white shadow-lg justify-end">
+            {isAuthenticated ? <LogoutButton/> : <LoginButton/> }
+        </div>
+    )
+}
+
+
+function NavBar(){
+   return( <nav class="bg-white shadow-lg">
+		    <div class="max-w-6xl mx-auto px-4">
+                <MainNav/>
+                <AuthNav/>
+            </div>
+    </nav>
+   )
+}
+
+export default NavBar
 
 /*
 function handleLogin(e) {
