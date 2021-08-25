@@ -9,10 +9,10 @@ const LogoutButton = () =>{
         <button 
         type="button" 
         name="loginSubmit" 
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 py-4 rounded" 
+        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 py-4 rounded" 
         onClick={logout}
         > 
-        Log In
+        Log Out
         </button>
     )
 

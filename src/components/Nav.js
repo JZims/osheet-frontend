@@ -7,14 +7,14 @@ import LogoutButton from './logout-button'
 
 function MainNav() {
     return (
-	 <div class="flex justify-between">
-		 <div class="flex space-x-7">
+	 <div className="flex justify-between">
+		 <div className="flex space-x-7">
              <div>
-                    <RouterNavLink class="flex items-center py-4 px-2" to="/new">
-                        <span class="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
+                    <RouterNavLink className="flex items-center py-4 px-2" to="/new">
+                        <span className="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
                     </RouterNavLink>
-                    <RouterNavLink class="flex items-center py-4 px-2" to="/sheets">
-                        <span class="font-semibold text-gray-500 text-lg">View Your Sheets</span>
+                    <RouterNavLink className="flex items-center py-4 px-2" to="/sheets">
+                        <span className="font-semibold text-gray-500 text-lg">View Your Sheets</span>
                     </RouterNavLink>
             </div>		
 		</div>
@@ -25,9 +25,9 @@ function MainNav() {
 
 function AuthNav() {
     const { isAuthenticated } = useAuth0()
-
+    console.log(isAuthenticated)
     return(
-        <div class="bg-white shadow-lg justify-end">
+        <div className="bg-white shadow-lg justify-end">
             {isAuthenticated ? <LogoutButton/> : <LoginButton/> }
         </div>
     )
@@ -35,38 +35,15 @@ function AuthNav() {
 
 
 function NavBar(){
-   return( <nav class="bg-white shadow-lg">
-		    <div class="max-w-6xl mx-auto px-4">
+   return( 
+        <nav className="bg-white shadow-lg">
+		    <div className="max-w-6xl mx-auto px-4">
                 <MainNav/>
                 <AuthNav/>
             </div>
-    </nav>
+        </nav>
    )
 }
 
 export default NavBar
 
-/*
-function handleLogin(e) {
-    e.preventDefault()
-    dispatch({type: "login", name: e.target.userInput.value, password: e.target.passInput.value})
-    // dispatch({})
-
-    }
-
-
-
- <form id="loginForm" onSubmit={handleLogin}>
-                <label for="userInput">Username:</label>
-                <input type="text" id="userInput" name="userInput"></input>
-                <br/>
-                <br/>
-                <label for="passInput">Password:</label>
-                <input type="text" id="passInput" name="passInput"></input>
-                <br/>
-                <br/>
-                <button type="submit" name="loginSubmit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 py-4 rounded">Log In</button>
-                <p>Or</p>
-                <button type="button" name="signup" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 py-4 rounded">Sign Up</button>
-            </form> 
-*/

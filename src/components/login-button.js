@@ -9,7 +9,7 @@ return(
     <button 
     type="button" 
     name="loginSubmit" 
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 py-4 rounded" 
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 py-4 rounded" 
     onClick={() => loginWithRedirect()}
     > 
     Log In
