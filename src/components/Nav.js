@@ -13,7 +13,7 @@ function MainNav() {
                     <RouterNavLink className="flex items-center py-4 px-2" to="/new">
                         <span className="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
                     </RouterNavLink>
-                    <RouterNavLink className="flex items-center py-4 px-2" to="/sheets">
+                    <RouterNavLink className="flex items-center py-4 px-2" to="/mySheets">
                         <span className="font-semibold text-gray-500 text-lg">View Your Sheets</span>
                     </RouterNavLink>
             </div>		
@@ -35,11 +35,12 @@ function AuthNav() {
 
 
 function NavBar(){
+    const { isAuthenticated } = useAuth0()
    return( 
         <nav className="bg-white shadow-lg">
 		    <div className="max-w-6xl mx-auto px-4">
-                <MainNav/>
-                <AuthNav/>
+                {isAuthenticated ? <MainNav/> : null }
+                <AuthNav/> 
             </div>
         </nav>
    )

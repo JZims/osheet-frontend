@@ -19,7 +19,11 @@ ReactDOM.render(
     <BrowserRouter>
       <React.StrictMode>
         {/* Auth0 Provider */}
-        <Auth0ProviderWithHistory>
+        <Auth0ProviderWithHistory
+          domain = "dev-p5tsdfvd.us.auth0.com"
+          clientId = "nFK14I0MNuaxuoirHC0T5tvgGBp1mkFb"
+          redirectUri = {window.location.origin}
+        >
         <App />
         </Auth0ProviderWithHistory>
       </React.StrictMode>
