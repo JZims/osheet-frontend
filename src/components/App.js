@@ -1,9 +1,8 @@
 
-import {Switch, Route, Link } from "react-router-dom";
+import {Switch, Route } from "react-router-dom";
 
 //tailwindcss style file
 import '../styles/main.css'
-import Nav from './Nav'
 import MySheets from './MySheets.js'
 import Home from './Home.js'
 import NewSheet from './NewSheet.js'

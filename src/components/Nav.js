@@ -7,17 +7,16 @@ import LogoutButton from './logout-button'
 
 function MainNav() {
     return (
-	 <div className="flex justify-between">
-		 <div className="flex space-x-7">
-             <div>
+	 <div className="flex justify-between content-start">
+             
                     <RouterNavLink className="flex items-center py-4 px-2" to="/new">
                         <span className="font-semibold text-gray-500 text-lg">Create A New Sheet</span>
                     </RouterNavLink>
                     <RouterNavLink className="flex items-center py-4 px-2" to="/mySheets">
                         <span className="font-semibold text-gray-500 text-lg">View Your Sheets</span>
                     </RouterNavLink>
-            </div>		
-		</div>
+            
+		
 	</div>
 		
     )
@@ -27,7 +26,7 @@ function AuthNav() {
     const { isAuthenticated } = useAuth0()
     console.log(isAuthenticated)
     return(
-        <div className="bg-white shadow-lg justify-end">
+        <div className="content-center">
             {isAuthenticated ? <LogoutButton/> : <LoginButton/> }
         </div>
     )
