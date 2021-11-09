@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Nav from './Nav'
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react'
 
 
 function Home(){
-    const { getAccessTokenSilently } = useAuth0()
+    
+    const { user, isAuthenticated, getAccessTokenSilently } = useAuth0()
 
-    console.log(getAccessTokenSilently())
+    useEffect( () => {
+        const domain = process.env.API_DOMAIN
+
+        try {
+            const accessToken = await getAccessTokenSilently({
+                audience: `${domain}`, 
+                scope: "read:current_user", 
+            })
+            const userSheetsByIdUrl = `${domain}/users/`
+        }
+    })
+
+
     return(
+    <div>
         <Nav/>
+        <p>This is Home</p>
+    </div>
+        
+        
     )
 
 }
